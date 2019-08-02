@@ -1,0 +1,41 @@
+.top-bar-container {
+  background-color: firebrick;
+  opacity: 1;
+  z-index: 1;
+  &.expanded {
+    position: sticky;
+    top: 0;
+  }
+  .inner-container {
+    width: 100%;
+    a {
+      color: black;
+      padding-right: 1rem;
+      &:last-child {
+        padding-right: 0;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .header-logo {
+    &.expanded {
+
+    }
+    &.shrunken {
+
+    }
+  }
+  .header-nav-links {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    a {
+      letter-spacing: 0.05rem;
+    }
+    &.expanded {
+      justify-content: flex-end;
+    }
+  }
+}

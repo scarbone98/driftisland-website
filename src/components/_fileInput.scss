@@ -1,0 +1,15 @@
+.file-input-container {
+  width: 100%;
+  height: 100%;
+  border: black dashed 1px;
+  position: relative;
+  &.highlight {
+    border-style: solid;
+  }
+  input[type="file"] {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}

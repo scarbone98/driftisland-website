@@ -1,0 +1,12 @@
+.container-outer {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+.container-inner {
+    padding: 1rem;
+    max-width: 1024px;
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
