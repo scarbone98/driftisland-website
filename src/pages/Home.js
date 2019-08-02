@@ -5,17 +5,30 @@ import Image from '../components/Image';
 import {Link} from 'react-router-dom';
 import PageBody from "../components/PageBody";
 import MyLoader from "../components/ArticleLoader";
+import {
+    BrowserView,
+    MobileView,
+    isBrowser,
+    isMobile
+} from "react-device-detect";
+import {Flex, Box} from "reflexbox";
+import classNames from 'classnames';
+import './Home.scss';
+import {getArticles, getNumArticles} from "../API";
+import Article from '../components/Article';
 
 function Body() {
-    const [articles, setArticles] = useState({loading: true, data: []});
+    const [articles, setArticles] = useState({loading: true, data: [], number: 0});
     useEffect(() => {
         async function fetchData() {
             try {
-                const articles = await axios.get('http://localhost:5000/articles/getArticles');
-                if (Array.isArray(articles.data)) {
-                    setArticles({loading: false, data: articles.data});
+                const numArticles = await getNumArticles();
+                setArticles({...articles, number: numArticles.count});
+                const articleData = await getArticles();
+                if (Array.isArray(articleData)) {
+                    setArticles({...articles, loading: false, data: articleData});
                 } else {
-                    setArticles({loading: false, data: []});
+                    setArticles({...articles, loading: false, data: []});
                 }
             } catch (e) {
                 console.log(e);
@@ -24,62 +37,45 @@ function Body() {
 
         fetchData();
     }, []);
+    let placeHolders = [];
+    for (let i = 0; i < articles.number; i++) {
+        placeHolders.push(<MyLoader/>);
+    }
     return (
         <PageBody>
             <Container>
-                <div style={{width: '70%', marginRight: 50}}>
-                    {
-                        articles.loading ?
-                            <MyLoader/>
-                            :
-                            articles.data.map(article => {
-                                console.log(article);
-                                console.log(`http://localhost:5000/articles/image/${article.images[0]}`);
-                                return (
-                                    <div>
-                                        <h2>
-                                            {article.title}
-                                        </h2>
-                                        <h5>{article.subtitle}</h5>
-                                        <Image
-                                            src={`http://localhost:5000/articles/image/${article.images[0]}`}/>
-                                        <div>
-                                            {article.body}
-                                        </div>
-                                        <div style={{
-                                            width: '100%',
-                                            display: 'flex',
-                                            justifyContent: 'flex-end',
-                                            flex: 1,
-                                            justifyItems: 'center',
-                                            flexDirection: 'column',
-                                            alignItems: 'flex-end'
-                                        }}>
-                                            <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-                                                <div style={{width: 25, height: 25, marginRight: '0.5rem'}}>
-                                                    {/*<Image*/}
-                                                    {/*    src={`https://localhost:5000/articles/image/${article.images[0]}`}/>*/}
-                                                </div>
-                                                {/*<span>{article.author.name.first} {article.author.name.last}</span>*/}
-                                                <span>Samuel Carbone</span>
-                                            </div>
-                                            <Link to={`/articles/${article._id}`} style={{color: 'black'}}>Read more
-                                                >></Link>
-                                        </div>
-                                    </div>
-                                )
-                            })
-                    }
-                </div>
-                <div style={{
-                    width: '30%',
-                    height: 200,
-                    backgroundColor: 'rgba(239, 30, 31, 0.85)',
-                    position: 'sticky',
-                    top: 100
-                }}>
-                    SPONSOR BAR
-                </div>
+                <Flex style={{width: '100%'}}>
+                    <Box w={1} className={classNames('article-container', {mobile: isMobile, browser: isBrowser})}>
+                        {
+                            articles.loading ?
+                                placeHolders
+                                :
+                                articles.data.map(article => {
+                                    console.log(article);
+                                    console.log(`http://localhost:5000/articles/image/${article.images[0]}`);
+                                    return <Article title={article.title} body={article.body} id={article._id}
+                                                    author={{first: article.firstName, last: article.lastName}}
+                                                    image={article.images[0]} subtitle={article.subtitle}/>
+                                })
+                        }
+                    </Box>
+                    <BrowserView>
+                        <Box
+                            style={
+                                {
+                                    width: 200,
+                                    height: 200,
+                                    backgroundColor: 'rgba(239, 30, 31, 0.85)',
+                                    position: 'sticky',
+                                    top: 100
+                                }
+                            }
+                            w={1}
+                        >
+                            SPONSOR BAR
+                        </Box>
+                    </BrowserView>
+                </Flex>
             </Container>
         </PageBody>
     )

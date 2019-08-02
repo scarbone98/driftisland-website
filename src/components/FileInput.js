@@ -3,6 +3,7 @@ import './_fileInput.scss';
 import {Flex, Box} from 'reflexbox';
 import _ from 'lodash';
 import uuidv4 from 'uuid/v4';
+import Image from "./Image";
 
 export default function FileInput(props) {
     const [onDrag, setOnDrag] = useState(false);
@@ -13,6 +14,7 @@ export default function FileInput(props) {
         setOnDrag(false);
         let dt = e.dataTransfer;
         let files = dt.files;
+        if (!files) return;
         for (let i = 0; i < files.length; i++) {
             const fileReader = new FileReader();
             const id = uuidv4();
@@ -28,6 +30,7 @@ export default function FileInput(props) {
         e.preventDefault();
         setOnDrag(false);
         let file = e.target.files[0];
+        if (!file) return;
         const fileReader = new FileReader();
         const id = uuidv4();
         props.onFile({file, id});
@@ -67,10 +70,12 @@ export default function FileInput(props) {
                                             let imageCopy = images.filter(image => image.id !== id);
                                             setImages(imageCopy);
                                         }}
-                                        style={{cursor:'pointer'}}
+                                        style={{cursor: 'pointer'}}
                                     >X</h4>
                                 </div>
-                                <img key={id} src={file} alt="Car"/>
+                                <div style={{width: 200}}>
+                                    <Image key={id} src={file} alt="Car"/>
+                                </div>
                             </div>
                         )
                     })

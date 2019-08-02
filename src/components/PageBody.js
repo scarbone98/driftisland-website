@@ -6,8 +6,11 @@ const PageBody = React.forwardRef((props, ref) => {
     const [minHeight, setMinHeight] = useState(0);
     useEffect(() => {
         setMinHeight(window.innerHeight - bodyRef.current.offsetTop);
+        window.scroll(0,0);
         const listener = window.addEventListener('resize', () => {
-            setMinHeight(window.innerHeight - bodyRef.current.offsetTop);
+            if (bodyRef.current) {
+                setMinHeight(window.innerHeight - bodyRef.current.offsetTop);
+            }
         });
         return () => window.removeEventListener('resize', listener);
     },[]);

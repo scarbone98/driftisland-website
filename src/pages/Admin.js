@@ -10,9 +10,12 @@ import FormLabel from "react-bootstrap/FormLabel";
 import {Row, Col} from "react-bootstrap";
 import {Redirect} from 'react-router-dom';
 import PageBody from "../components/PageBody";
+import {uploadFiles, uploadArticle} from "../API";
+
 function Admin() {
     const [formData, setFormData] = useState({});
     const [redirect, setRedirect] = useState(false);
+    const [isLoading, setLoading] = useState(false);
 
     function handleOnChange(e) {
         setFormData({
@@ -35,32 +38,36 @@ function Admin() {
         setFormData({...formData, files: [...files]});
     }
 
-    async function onSubmit() {
+    async function addFiles() {
+        if (!formData.files || !formData.files.length) {
+            return null;
+        }
         const filesForm = new FormData();
         for (let i = 0; i < formData.files.length; i++) {
             filesForm.append(`photos`, formData.files[i].file);
         }
         try {
-            const filesResponse = await axios.post(
-                'http://localhost:5000/articles/upload',
-                filesForm,
-                {
-                    headers: {
-                        'Content-Type': 'multipart/form-data'
-                    }
-                });
-            console.log('FILES RESPONSE', filesResponse);
-            const postData = {...formData, images: filesResponse.data};
+            return await uploadFiles(filesForm);
+        } catch (e) {
+            return null;
+        }
+    }
+
+    async function onSubmit() {
+        try {
+            let fileResponse = await addFiles() || [];
+            console.log('FILES RESPONSE', fileResponse);
+            const postData = {...formData, images: fileResponse.data};
             delete postData.files;
-            console.log('POST DATA', postData);
-            const response = await axios.post('http://localhost:5000/articles/createArticle', postData);
-            console.log(response);
-            console.log('Success on adding post');
+            const response = await uploadArticle(postData);
             setRedirect(true);
         } catch (e) {
             console.log(e);
+        } finally {
+            setLoading(false);
         }
     }
+
     return (
         <PageBody>
             <Flex justify="center">
@@ -88,7 +95,7 @@ function Admin() {
                         </Col>
                     </Row>
                     <Flex justify="flex-end">
-                        <Button onClick={onSubmit}>Submit</Button>
+                        <Button onClick={onSubmit} disabled={isLoading}>Submit</Button>
                     </Flex>
                 </Form>
             </Flex>

@@ -1,5 +1,6 @@
 .top-bar-container {
-  background-color: firebrick;
+  background: rgb(36,0,0);
+  background: linear-gradient(248deg, rgba(36,0,0,1) 0%, rgba(117,9,9,1) 0%, rgba(255,0,0,1) 100%);
   opacity: 1;
   z-index: 1;
   &.expanded {
@@ -10,6 +11,7 @@
     width: 100%;
     a {
       color: black;
+      font-size: 1.2rem;
       padding-right: 1rem;
       &:last-child {
         padding-right: 0;
@@ -36,6 +38,30 @@
     }
     &.expanded {
       justify-content: flex-end;
+    }
+  }
+  .socials-container {
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    font-size: 1.5rem;
+    a {
+      color: black;
+    }
+    a:hover[data-name="youtube"] {
+      color: red;
+    }
+    a:hover[data-name="instagram"] {
+      color: #C13584;
+    }
+    a:hover[data-name="facebook"] {
+      color: blue;
+    }
+    div {
+      padding-left: 0.5rem;
+    }
+    &.expanded {
+      display: none;
     }
   }
 }
