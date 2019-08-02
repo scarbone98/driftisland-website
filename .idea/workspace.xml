@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f017aa28-fe69-49c4-9fd4-69ee7cde894a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/API.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Article.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Home.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/variables.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/_index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FileInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FileInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PageBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PageBody.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/_container.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_container.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/variables.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/variables.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +82,7 @@
       <workItem from="1564187787062" duration="8599000" />
       <workItem from="1564264404777" duration="4000" />
       <workItem from="1564274870968" duration="17752000" />
-      <workItem from="1564358016897" duration="36268000" />
+      <workItem from="1564358016897" duration="38752000" />
     </task>
     <servers />
   </component>
