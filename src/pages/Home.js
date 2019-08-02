@@ -52,7 +52,6 @@ function Body() {
                                 :
                                 articles.data.map(article => {
                                     console.log(article);
-                                    console.log(`http://localhost:5000/articles/image/${article.images[0]}`);
                                     return <Article title={article.title} body={article.body} id={article._id}
                                                     author={{first: article.firstName, last: article.lastName}}
                                                     image={article.images[0]} subtitle={article.subtitle}/>

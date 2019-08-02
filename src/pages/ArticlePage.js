@@ -7,6 +7,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import Image from "../components/Image";
 import PageBody from "../components/PageBody";
 import {getArticle} from "../API";
+import {domainURL} from "../variables";
 
 export default function ArticlePage(props) {
     const [post, setPost] = useState({images: []});
@@ -29,7 +30,7 @@ export default function ArticlePage(props) {
                                         return (
                                             <Carousel.Item id={src} style={{width: '100%'}}>
                                                 <Image
-                                                    src={`http://localhost:5000/articles/image/${src}`}
+                                                    src={`${domainURL}/articles/image/${src}`}
                                                     alt="First slide"
                                                 />
                                                 <Carousel.Caption>

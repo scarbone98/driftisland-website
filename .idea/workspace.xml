@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f017aa28-fe69-49c4-9fd4-69ee7cde894a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/variables.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/variables.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Article.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Article.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,12 +20,6 @@
         <option value="JavaScript File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>textarea</find>
-      <find>console.log</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -82,7 +78,7 @@
       <workItem from="1564187787062" duration="8599000" />
       <workItem from="1564264404777" duration="4000" />
       <workItem from="1564274870968" duration="17752000" />
-      <workItem from="1564358016897" duration="38752000" />
+      <workItem from="1564358016897" duration="39520000" />
     </task>
     <servers />
   </component>

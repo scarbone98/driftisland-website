@@ -2,6 +2,7 @@ import React from 'react';
 import Image from "./Image";
 import {Link} from "react-router-dom";
 import PropTypes from 'prop-types';
+import {domainURL} from "../variables";
 
 export default function Article({title, subtitle, body, image, id, author}) {
     return (
@@ -12,7 +13,7 @@ export default function Article({title, subtitle, body, image, id, author}) {
             <h5>{subtitle}</h5>
             {image ?
                 <Image
-                    src={`http://localhost:5000/articles/image/${image}`}/>
+                    src={`${domainURL}/articles/image/${image}`}/>
                 :
                 <div>PLACEHOLDER</div>
             }
