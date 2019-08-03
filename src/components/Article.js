@@ -3,7 +3,7 @@ import Image from "./Image";
 import {Link} from "react-router-dom";
 import PropTypes from 'prop-types';
 import {domainURL} from "../variables";
-
+import Img from 'react-image';
 export default function Article({title, subtitle, body, image, id, author}) {
     return (
         <div>
@@ -35,14 +35,14 @@ export default function Article({title, subtitle, body, image, id, author}) {
                     alignItems: 'center'
                 }}>
                     <div style={{width: 25, height: 25, marginRight: '0.5rem'}}>
-                        {/*<Image*/}
-                        {/*    src={`https://localhost:5000/articles/image/${article.images[0]}`}/>*/}
+                        <Img
+                            src={''}
+                        />
                     </div>
                     <span>{author.first} {author.last}</span>
                     <span>Samuel Carbone</span>
                 </div>
-                <Link to={`/articles/${id}`} style={{color: 'black'}}>Read more
-                    >></Link>
+                <Link to={`/articles/${id}`} style={{color: 'black'}}>Read more >></Link>
             </div>
         </div>
     );
