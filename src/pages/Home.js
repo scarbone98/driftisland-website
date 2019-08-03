@@ -16,7 +16,7 @@ import classNames from 'classnames';
 import './Home.scss';
 import {getArticles, getNumArticles} from "../API";
 import Article from '../components/Article';
-
+import YouTubeComponent from "../components/YouTubeViwer";
 function Body() {
     const [articles, setArticles] = useState({loading: true, data: [], number: 0});
     useEffect(() => {
@@ -62,16 +62,14 @@ function Body() {
                         <Box
                             style={
                                 {
-                                    width: 200,
-                                    height: 200,
-                                    backgroundColor: 'rgba(239, 30, 31, 0.85)',
                                     position: 'sticky',
                                     top: 100
                                 }
                             }
                             w={1}
                         >
-                            SPONSOR BAR
+                            <h3>What's new</h3>
+                            <YouTubeComponent/>
                         </Box>
                     </BrowserView>
                 </Flex>
