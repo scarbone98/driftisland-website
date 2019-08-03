@@ -1,11 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import './App.scss';
 import {Flex, Box} from 'reflexbox';
 import Form from "react-bootstrap/Form";
 import Input from '../components/Input';
 import FileInput from '../components/FileInput';
 import Button from "react-bootstrap/Button";
-import axios from 'axios';
 import FormLabel from "react-bootstrap/FormLabel";
 import {Row, Col} from "react-bootstrap";
 import {Redirect} from 'react-router-dom';

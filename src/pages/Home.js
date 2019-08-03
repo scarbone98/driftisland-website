@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Container from "../components/Container";
-import axios from 'axios';
 import Image from '../components/Image';
-import {Link} from 'react-router-dom';
 import PageBody from "../components/PageBody";
 import MyLoader from "../components/ArticleLoader";
 import {
@@ -17,6 +15,7 @@ import './Home.scss';
 import {getArticles, getNumArticles} from "../API";
 import Article from '../components/Article';
 import YouTubeComponent from "../components/YouTubeViwer";
+import Dropdown from "react-bootstrap/Dropdown";
 function Body() {
     const [articles, setArticles] = useState({loading: true, data: [], number: 0});
     useEffect(() => {
@@ -63,13 +62,31 @@ function Body() {
                             style={
                                 {
                                     position: 'sticky',
-                                    top: 100
+                                    top: 100,
                                 }
                             }
-                            w={1}
                         >
-                            <h3>What's new</h3>
-                            <YouTubeComponent/>
+                            <Box
+                                style={
+                                    {
+                                        padding: '1rem'
+                                    }
+                                }
+                            >
+                                <h3>What's new</h3>
+                                <YouTubeComponent/>
+                            </Box>
+                            <Dropdown.Divider/>
+                            <Flex wrap className="elements-bottom">
+                                <span>Help</span>
+                                <span>Status</span>
+                                <span>Writers</span>
+                                <span>Blog</span>
+                                <span>Careers</span>
+                                <span>Privacy</span>
+                                <span>Terms</span>
+                                <span>About</span>
+                            </Flex>
                         </Box>
                     </BrowserView>
                 </Flex>

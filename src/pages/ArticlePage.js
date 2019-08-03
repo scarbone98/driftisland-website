@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import Container from "../components/Container";
-import axios from 'axios';
-import queryString from 'query-string';
 import {Flex, Box} from 'reflexbox';
 import Carousel from 'react-bootstrap/Carousel';
 import Image from "../components/Image";
@@ -16,7 +14,8 @@ export default function ArticlePage(props) {
         getArticle(id).then(data => setPost(data[0]));
     }, []);
 
-    const {title, subtitle, body, images, author} = post;
+    const {title, subtitle, body, images, authorFirst, authorLast} = post;
+    console.log(post);
     return (
         <PageBody>
             <Container>
@@ -48,10 +47,9 @@ export default function ArticlePage(props) {
                     <span>{body}</span>
                     <Flex justify="flex-end">
                         <Box>
-                            {!!author ?
+                            {authorFirst || authorLast ?
                                 <div>
-                                    <span>{author.fisrtName}</span>
-                                    <span>{author.lastName}</span>
+                                    <span>{authorFirst} {authorLast}</span>
                                 </div>
                                 :
                                 <span>Anonymous</span>

@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f017aa28-fe69-49c4-9fd4-69ee7cde894a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/YouTubeViwer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/AboutPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/StorePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -77,7 +83,7 @@
       <workItem from="1564187787062" duration="8599000" />
       <workItem from="1564264404777" duration="4000" />
       <workItem from="1564274870968" duration="17752000" />
-      <workItem from="1564358016897" duration="42149000" />
+      <workItem from="1564358016897" duration="48691000" />
     </task>
     <servers />
   </component>

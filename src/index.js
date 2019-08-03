@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './_index.scss';
 import Admin from './pages/Admin';
 import Home from './pages/Home';
+import StorePage from "./pages/StorePage";
+import AboutPage from "./pages/AboutPage";
 import ArticlePage from './pages/ArticlePage';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -16,6 +18,8 @@ const root = (
         <Switch>
             <Route exact path="/" component={Home}/>
             <Route path="/articles/:id" component={ArticlePage}/>
+            <Route path="/about" component={AboutPage}/>
+            <Route path="/store" component={StorePage}/>
             <Route path="/admin" component={Admin}/>
         </Switch>
         <Footer/>

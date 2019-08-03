@@ -58,8 +58,8 @@ export default function Header() {
                     </Link>
                     <div ref={ref} className={classNames('header-nav-links', {expanded: expanded})}
                          style={{width: '100%'}}>
-                        <a href="#">About</a>
-                        <a href="#">Store</a>
+                        <Link to="/about">About</Link>
+                        <Link to="/store">Store</Link>
                         <a href="#">Search</a>
                         <a href="#">Join</a>
                     </div>
