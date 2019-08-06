@@ -6,7 +6,7 @@ import Img from 'react-image';
 import Card from "react-bootstrap/Card";
 import moment from 'moment';
 import './_article.scss';
-import LinesEllipsis from 'react-lines-ellipsis'
+import LinesEllipsis from 'react-lines-ellipsis';
 import {Flex, Box} from 'reflexbox';
 
 export default function Article({title, subtitle, body, image, id, author, createdAt}) {
@@ -57,9 +57,9 @@ export default function Article({title, subtitle, body, image, id, author, creat
                     <Flex justify="space-between" w={1}>
                         <Box>
                             <LinesEllipsis
-                                text={`Created ${moment(createdAt).fromNow()}`}
-                                maxLine='1'
-                                ellipsis='...'
+                                text={`Created ${moment(createdAt).fromNow()} ago`}
+                                maxLine='0'
+                                ellipsis=''
                                 trimRight
                                 basedOn='letters'
                             />
