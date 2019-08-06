@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from "./Image";
 import {Link} from "react-router-dom";
 import PropTypes from 'prop-types';
 import {domainURL} from "../variables";
