@@ -20,7 +20,7 @@ const root = (
             <Route path="/articles/:id" component={ArticlePage}/>
             <Route path="/about" component={AboutPage}/>
             <Route path="/store" component={StorePage}/>
-            <Route path="/admin" component={Admin}/>
+            <Route path="/createPost" component={Admin}/>
         </Switch>
         <Footer/>
     </Router>
