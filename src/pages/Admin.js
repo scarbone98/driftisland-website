@@ -10,12 +10,12 @@ import {Row, Col} from "react-bootstrap";
 import {Redirect} from 'react-router-dom';
 import PageBody from "../components/PageBody";
 import {uploadFiles, uploadArticle} from "../API";
-
+import ProgressBar from "react-bootstrap/ProgressBar";
 function Admin() {
     const [formData, setFormData] = useState({});
     const [redirect, setRedirect] = useState(false);
     const [isLoading, setLoading] = useState(false);
-
+    const [uploadProgress, setUploadProgress] = useState({uploading: false, progress: 0});
     function handleOnChange(e) {
         setFormData({
             ...formData,
@@ -37,6 +37,11 @@ function Admin() {
         setFormData({...formData, files: [...files]});
     }
 
+    function progressHandler(progress) {
+        let percentCompleted = Math.floor((progress.loaded * 100) / progress.total);
+        setUploadProgress({uploading: true, progress: percentCompleted});
+    }
+
     async function addFiles() {
         if (!formData.files || !formData.files.length) {
             return null;
@@ -45,9 +50,8 @@ function Admin() {
         for (let i = 0; i < formData.files.length; i++) {
             filesForm.append(`photos`, formData.files[i].file);
         }
-        console.log('FILES', formData.files);
         try {
-            return await uploadFiles(filesForm);
+            return await uploadFiles(filesForm, progressHandler);
         } catch (e) {
             return null;
         }
@@ -72,6 +76,7 @@ function Admin() {
         <PageBody>
             <Flex justify="center">
                 <Form style={{width: 800}}>
+                    {uploadProgress.uploading && <ProgressBar now={uploadProgress.progress} label={`${uploadProgress.progress}%`} />}
                     <Flex column>
                         <Box>
                             <h3>Cover Photo(s)</h3>

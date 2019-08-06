@@ -45,7 +45,7 @@ export function uploadArticle(data) {
     })
 }
 
-export function uploadFiles(files) {
+export function uploadFiles(files, onProgress) {
     return new Promise(async (resolve, reject) => {
         try {
             const fileNames = await axios.post(
@@ -54,9 +54,9 @@ export function uploadFiles(files) {
                 {
                     headers: {
                         'Content-Type': 'multipart/form-data'
-                    }
+                    },
+                    onUploadProgress: onProgress
                 });
-            console.log('THESESAEDASDASDas', fileNames);
             resolve(fileNames);
         } catch (e) {
             reject(e);
