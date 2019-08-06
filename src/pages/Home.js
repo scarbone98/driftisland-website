@@ -16,6 +16,7 @@ import {getArticles, getNumArticles} from "../API";
 import Article from '../components/Article';
 import YouTubeComponent from "../components/YouTubeViwer";
 import Dropdown from "react-bootstrap/Dropdown";
+
 function Body() {
     const [articles, setArticles] = useState({loading: true, data: [], number: 0});
     useEffect(() => {
@@ -51,9 +52,17 @@ function Body() {
                                 :
                                 articles.data.map(article => {
                                     console.log(article);
-                                    return <Article title={article.title} body={article.body} id={article._id}
-                                                    author={{first: article.firstName, last: article.lastName}}
-                                                    image={article.images[0]} subtitle={article.subtitle}/>
+                                    return (
+                                        <Article
+                                            title={article.title}
+                                            body={article.body}
+                                            id={article._id}
+                                            author={{first: article.authorFirst, last: article.authorLast}}
+                                            image={article.images[0]}
+                                            subtitle={article.subtitle}
+                                            createdAt={article.createdAt}
+                                        />
+                                    )
                                 })
                         }
                     </Box>

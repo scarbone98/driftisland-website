@@ -45,6 +45,7 @@ function Admin() {
         for (let i = 0; i < formData.files.length; i++) {
             filesForm.append(`photos`, formData.files[i].file);
         }
+        console.log('FILES', formData.files);
         try {
             return await uploadFiles(filesForm);
         } catch (e) {
