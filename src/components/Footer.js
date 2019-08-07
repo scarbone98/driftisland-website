@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="footer-container">
             <Container>
                 <div>
-                    <Link to="terms">Terms & Conditions</Link>
+                    <Link to="/terms">Terms & Conditions</Link>
                 </div>
             </Container>
         </div>
