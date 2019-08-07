@@ -8,6 +8,7 @@ import moment from 'moment';
 import './_article.scss';
 import LinesEllipsis from 'react-lines-ellipsis';
 import {Flex, Box} from 'reflexbox';
+import Button from "react-bootstrap/Button";
 
 export default function Article({title, subtitle, body, image, id, author, createdAt}) {
     return (
@@ -56,7 +57,7 @@ export default function Article({title, subtitle, body, image, id, author, creat
                             - {author.first} {author.last}
                         </small>
                     </div>
-                    <Flex justify="space-between" w={1}>
+                    <Flex justify="space-between" w={1} align="flex-end">
                         <Box>
                             <LinesEllipsis
                                 text={`Created ${moment(createdAt).fromNow()} ago`}
@@ -68,7 +69,11 @@ export default function Article({title, subtitle, body, image, id, author, creat
                         </Box>
                         <Box>
                             <small className="text-muted">
-                                <Link to={`/articles/${id}`} style={{color: 'black'}}>Read more >></Link>
+                                <Link to={`/articles/${id}`} style={{color: 'black', textDecoration:'none'}}>
+                                    <div className="read-more-button">
+                                        Read more
+                                    </div>
+                                </Link>
                             </small>
                         </Box>
                     </Flex>

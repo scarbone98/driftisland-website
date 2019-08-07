@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f017aa28-fe69-49c4-9fd4-69ee7cde894a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Article.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Article.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/_article.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_article.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/_container.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_container.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_header.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage.js" afterDir="false" />
     </list>
@@ -81,7 +83,7 @@
       <workItem from="1564274870968" duration="17752000" />
       <workItem from="1564358016897" duration="48691000" />
       <workItem from="1564873771754" duration="507000" />
-      <workItem from="1564887673717" duration="18580000" />
+      <workItem from="1564887673717" duration="20690000" />
     </task>
     <servers />
   </component>
