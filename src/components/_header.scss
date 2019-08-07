@@ -25,6 +25,12 @@
   .header-logo {
 
   }
+
+  @mixin selected-nav-element {
+    transform: rotateZ(-7.5deg);
+    text-decoration: underline;
+  }
+
   .header-nav-links {
     display: flex;
     flex: 1;
@@ -32,6 +38,14 @@
     margin-top: 1rem;
     a {
       letter-spacing: 0.05rem;
+      display: block;
+      transition: transform 0.25s ease;
+      &:hover, &.selected {
+        @include selected-nav-element;
+      }
+      &:hover {
+        color: white;
+      }
     }
     &.expanded {
       justify-content: flex-end;

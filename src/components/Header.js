@@ -10,7 +10,7 @@ import {FaInstagram, FaYoutube, FaFacebookSquare} from 'react-icons/fa';
 export default function Header() {
     const ref = useRef(null);
     const [expanded, setExpanded] = useState(false);
-
+    const [selectedNavLink, setSelectedNavLink] = useState(1);
     function checkScroll() {
         if (window.scrollY >= ref.current.offsetTop && !expanded) {
             setExpanded(true);
@@ -59,15 +59,18 @@ export default function Header() {
                     </Link>
                     <div ref={ref} className={classNames('header-nav-links', {expanded: expanded})}
                          style={{width: '100%'}}>
-                        <Flex w={1}>
-                            <Box w={1/3} style={{textAlign:'center'}}>
-                                <Link to="/about">About</Link>
+                        <Flex w={1} justify="space-around">
+                            <Box>
+                                <Link to="/about" className={classNames({selected: selectedNavLink === 0})} onClick={() => setSelectedNavLink(0)}>About</Link>
                             </Box>
-                            <Box w={1/3} style={{textAlign:'center'}}>
-                                <Link to="/store">Store</Link>
+                            <Box>
+                                <Link to="/" className={classNames({selected: selectedNavLink === 1})} onClick={() => setSelectedNavLink(1)}>Home</Link>
                             </Box>
-                            <Box w={1/3} style={{textAlign:'center'}}>
-                                <a href="#">Join</a>
+                            <Box>
+                                <Link to="/store" className={classNames({selected: selectedNavLink === 2})} onClick={() => setSelectedNavLink(2)}>Store</Link>
+                            </Box>
+                            <Box>
+                                <a href="#" className={classNames({selected: selectedNavLink === 3})}>Join</a>
                             </Box>
                         </Flex>
                     </div>

@@ -31,7 +31,7 @@ export default function ArticlePage(props) {
         <PageBody>
             <Container style={{maxWidth: 750}}>
                 <Flex column>
-                    <Flex justify="flex-end" column>
+                    <Flex justify="flex-end" column style={{paddingBottom: '1rem'}}>
                         <h1>{title}</h1>
                         <h5>{subtitle}</h5>
                         <Flex align="center" className={classNames('post-meta-data')}>
