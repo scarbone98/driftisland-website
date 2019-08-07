@@ -11,7 +11,7 @@ import moment from 'moment';
 import Dropdown from "react-bootstrap/Dropdown";
 import classNames from 'classnames';
 import './ArticlePage.scss';
-
+import parse from 'html-react-parser';
 export default function ArticlePage(props) {
     const [post, setPost] = useState({images: []});
     useEffect(() => {
@@ -75,7 +75,7 @@ export default function ArticlePage(props) {
                             </Carousel>
                         </Box>
                     </Flex>
-                    <p style={{whiteSpace: 'pre-line'}}>{body}</p>
+                    {body && <p style={{whiteSpace: 'pre-line'}}>{parse(body.replace(/(?:\r\n|\r|\n)/g, '<br>'))}</p>}
                 </Flex>
             </Container>
         </PageBody>
