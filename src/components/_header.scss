@@ -29,11 +29,13 @@
     display: flex;
     flex: 1;
     justify-content: space-between;
+    margin-top: 1rem;
     a {
       letter-spacing: 0.05rem;
     }
     &.expanded {
       justify-content: flex-end;
+      margin-top: 0;
     }
   }
   .socials-container {

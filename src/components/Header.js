@@ -11,7 +11,7 @@ export default function Header() {
     const ref = useRef(null);
     const [expanded, setExpanded] = useState(false);
 
-    function checkScroll(e) {
+    function checkScroll() {
         if (window.scrollY >= ref.current.offsetTop && !expanded) {
             setExpanded(true);
         } else if (window.scrollY < ref.current.offsetTop) {
@@ -31,7 +31,8 @@ export default function Header() {
             <Container>
                 <Flex className={classNames('socials-container', {expanded: expanded})}>
                     <Box>
-                        <a data-name="youtube" href="https://www.youtube.com/channel/UCH5mtixeGvhyPsZkZrp1T7w?view_as=public&fbclid=IwAR2tJMJp_LBX72Vw0mR1aiIwWvIa2QFOJ1_hdaNAR1eFSXFymAkhOO_pBn8"
+                        <a data-name="youtube"
+                           href="https://www.youtube.com/channel/UCH5mtixeGvhyPsZkZrp1T7w?view_as=public&fbclid=IwAR2tJMJp_LBX72Vw0mR1aiIwWvIa2QFOJ1_hdaNAR1eFSXFymAkhOO_pBn8"
                            target="_blank">
                             <FaYoutube/>
                         </a>
@@ -51,17 +52,24 @@ export default function Header() {
                       justify="space-between" column={!expanded}>
                     <Link to="/">
                         <div className="header-logo"
-                             style={{width: expandedClass ? 50 : 100, height: expandedClass ? 50 : 100}}>
+                             style={{width: expandedClass ? 50 : 75, height: expandedClass ? 50 : 75}}>
                             <Image
                                 src="/LogoGrande.png"/>
                         </div>
                     </Link>
                     <div ref={ref} className={classNames('header-nav-links', {expanded: expanded})}
                          style={{width: '100%'}}>
-                        <Link to="/about">About</Link>
-                        <Link to="/store">Store</Link>
-                        <a href="#">Search</a>
-                        <a href="#">Join</a>
+                        <Flex w={1}>
+                            <Box w={1/3} style={{textAlign:'center'}}>
+                                <Link to="/about">About</Link>
+                            </Box>
+                            <Box w={1/3} style={{textAlign:'center'}}>
+                                <Link to="/store">Store</Link>
+                            </Box>
+                            <Box w={1/3} style={{textAlign:'center'}}>
+                                <a href="#">Join</a>
+                            </Box>
+                        </Flex>
                     </div>
                 </Flex>
             </Container>

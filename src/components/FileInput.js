@@ -48,7 +48,6 @@ export default function FileInput(props) {
                 style={{
                     height: '100%',
                     position: 'relative',
-                    flexWrap: 'wrap'
                 }}
                 onDragEnter={() => setOnDrag(true)}
                 onDragLeave={() => setOnDrag(false)}

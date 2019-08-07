@@ -18,10 +18,12 @@ export default function Article({title, subtitle, body, image, id, author, creat
                 src={`${domainURL}/articles/image/${image}`}/>
             }
             <Card.Body>
-                <Card.Title>
-                    {title}
-                </Card.Title>
-                <Card.Subtitle>{subtitle}</Card.Subtitle>
+                <div style={{paddingBottom: '1rem'}}>
+                    <Card.Title>
+                        {title}
+                    </Card.Title>
+                    <Card.Subtitle style={{color: 'gray'}}>{subtitle}</Card.Subtitle>
+                </div>
                 <Card.Text style={{lineHeight: '1.8rem'}}>
                     <LinesEllipsis
                         text={body}

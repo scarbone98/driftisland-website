@@ -1,11 +1,13 @@
 import React from 'react';
 import Img from 'react-image';
 import ContentLoader from "react-content-loader";
-export default function Image(props) {
+import Image from "react-bootstrap/Image";
+export default function r(props) {
     return (
-        <Img
+        <Image
+            fluid
             {...props}
-            style={{width: '100%', maxWidth: '100%'}}
+            style={{maxWidth: '100%'}}
             loader={
                 <ContentLoader
                     height={357}

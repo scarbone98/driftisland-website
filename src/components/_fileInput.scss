@@ -3,6 +3,7 @@
   height: 100%;
   border: black dashed 1px;
   position: relative;
+  overflow-x: auto;
   &.highlight {
     border-style: solid;
   }
