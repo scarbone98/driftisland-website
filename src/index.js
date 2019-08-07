@@ -8,6 +8,7 @@ import AboutPage from "./pages/AboutPage";
 import ArticlePage from './pages/ArticlePage';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Terms from './pages/Terms';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
@@ -21,6 +22,7 @@ const root = (
             <Route path="/about" component={AboutPage}/>
             <Route path="/store" component={StorePage}/>
             <Route path="/admin" component={Admin}/>
+            <Route path="/terms" component={Terms}/>
         </Switch>
         <Footer/>
     </Router>
