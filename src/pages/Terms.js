@@ -64,14 +64,14 @@ export default function Terms() {
                         opinions ofDrift Island Magazine, its agents or affiliates. Comments reflect the view and
                         opinion of the
                         person who posts such view or opinion. To the extent permitted by applicable laws Drift Island
-                        Magazineshall
+                        Magazine shall
                         not be responsible or liable for the Comments or for any loss cost, liability, damages or
                         expenses caused
                         and or suffered as a result of any use of and/or posting of and/or appearance of the Comments on
                         this
                         website.
                     </li>
-                    <li>Drift Island Magazinereserves the right to monitor all Comments and to remove any Comments which
+                    <li>Drift Island Magazine reserves the right to monitor all Comments and to remove any Comments which
                         it considers
                         in its absolute discretion to be inappropriate, offensive or otherwise in breach of these Terms
                         and Conditions.
@@ -114,7 +114,7 @@ export default function Terms() {
                                 site in the same
                                 manner as they hyperlink to the Web sites of other listed businesses; and
                             </li>
-                            <li>Systemwide Accredited Businesses except soliciting non-profit organizations, charity
+                            <li>System wide Accredited Businesses except soliciting non-profit organizations, charity
                                 shopping malls,
                                 and charity fundraising groups which may not hyperlink to our Web site.
                             </li>
@@ -171,8 +171,8 @@ export default function Terms() {
 
                 <p>If you are among the organizations listed in paragraph 2 above and are interested in linking to our
                     website,
-                    you must notify us by sending an e-mail to <a href="mailto:scarbone.bsopr@gmail.com"
-                                                                  title="send an email to scarbone.bsopr@gmail.com">scarbone.bsopr@gmail.com</a>.
+                    you must notify us by sending an e-mail to <a href="mailto:driftislandmagazinepr@gmail.com"
+                                                                  title="send an email to driftislandmagazinepr@gmail.com">driftislandmagazinepr@gmail.com</a>.
                     Please include your name, your organization name, contact information (such as a phone number and/or
                     e-mail
                     address) as well as the URL of your site, a list of any URLs from which you intend to link to our
