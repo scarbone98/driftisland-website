@@ -7,7 +7,7 @@ export default function r(props) {
         <Image
             fluid
             {...props}
-            style={{maxWidth: '100%'}}
+            style={{width: '100%', objectFit: 'cover'}}
             loader={
                 <ContentLoader
                     height={357}

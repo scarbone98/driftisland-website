@@ -11,6 +11,9 @@ import {Redirect} from 'react-router-dom';
 import PageBody from "../components/PageBody";
 import {uploadFiles, uploadArticle} from "../API";
 import ProgressBar from "react-bootstrap/ProgressBar";
+import CustomBody from "../components/CustomPostBody";
+import EditableInputText from "../components/EditableInputText";
+
 function Admin() {
     const [formData, setFormData] = useState({});
     const [redirect, setRedirect] = useState(false);
@@ -58,6 +61,7 @@ function Admin() {
     }
 
     async function onSubmit() {
+        setLoading(true);
         try {
             let fileResponse = await addFiles() || [];
             console.log('FILES RESPONSE', fileResponse);
@@ -71,7 +75,7 @@ function Admin() {
             setLoading(false);
         }
     }
-
+    console.log(formData);
     return (
         <PageBody>
             <Flex justify="center">
@@ -88,6 +92,8 @@ function Admin() {
                     <Input onChange={handleOnChange} label={<h3>Title</h3>} name='title'/>
                     <Input onChange={handleOnChange} label={<h3>Subtitle</h3>} name='subtitle'/>
                     <Input onChange={handleOnChange} label={<h3>Body</h3>} name='body' as='textarea'/>
+                    {/*<CustomBody/>*/}
+                    {/*<EditableInputText onChange={handleOnChange} name='body'/>*/}
                     <FormLabel>
                         <h3>Author Name</h3>
                     </FormLabel>

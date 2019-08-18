@@ -50,8 +50,8 @@ export default function ArticlePage(props) {
                                     }
                                 </div>
                                 <div>
-                                    {moment(createdAt).format('MMM Do, YYYY')} &middot; {numberOfWords &&
-                                <span>{numberOfWords} min read</span>}
+                                    {moment(createdAt).format('MMM Do, YYYY')} &middot;
+                                    <span>{numberOfWords} min read</span>
                                 </div>
                             </Box>
                         </Flex>
@@ -59,7 +59,7 @@ export default function ArticlePage(props) {
                     <Dropdown.Divider/>
                     <Flex style={{paddingTop: '1rem', paddingBottom: '1rem'}} w={1}>
                         <Box w={1}>
-                            <Carousel style={{width: '100%'}}>
+                            <Carousel style={{width: 800, maxWidth: '100%'}}>
                                 {
                                     images.map(src => {
                                         return (

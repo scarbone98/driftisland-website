@@ -1,0 +1,19 @@
+.style-element-container {
+  .style-element {
+    width: 2em;
+    text-align: center;
+    border: solid 1px black;
+    cursor: pointer;
+    &:hover {
+      background: black;
+      color: white;
+    }
+  }
+}
+.editor-input {
+  border: black solid 1px;
+  border-radius: 2px;
+  height: 200px;
+  overflow: auto;
+  cursor: text;
+}
